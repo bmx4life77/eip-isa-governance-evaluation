@@ -1,0 +1,87 @@
+{
+  "runId": "gov-eval_20260114_091736_p4q8r2",
+  "timestamp": "2026-01-14T09:17:36.529Z",
+  "domain": "PERP",
+  "proposal": {
+    "id": "PROP-2026-112",
+    "title": "Leverage Cap Adjustment v3.2",
+    "threshold": 0.74
+  },
+  "status": "REVIEW",
+  "governanceScore": 0.749,
+  "currentModulatedMetrics": {
+    "beta_modulated": 2.18,
+    "volatility_24h": 0.26,
+    "SE": 0.068,
+    "drift_1h": -0.042,
+    "phi": 0.72,
+    "psi5": 0.37
+  },
+  "impactAnalysis": [
+    {
+      "metric": "phi",
+      "current": 0.72,
+      "declaredDirection": "increase",
+      "declaredMagnitude": 0.11,
+      "forecasted": 0.7992,
+      "quality": "strong",
+      "flag": "OK"
+    },
+    {
+      "metric": "volatility_24h",
+      "current": 0.26,
+      "declaredDirection": "increase",
+      "declaredMagnitude": 0.08,
+      "forecasted": 0.2808,
+      "quality": "negative",
+      "flag": "Warning"
+    },
+    {
+      "metric": "beta_modulated",
+      "current": 2.18,
+      "declaredDirection": "neutral",
+      "declaredMagnitude": 0.0,
+      "forecasted": 2.18,
+      "quality": "neutral",
+      "flag": "Warning"
+    },
+    {
+      "metric": "SE",
+      "current": 0.068,
+      "declaredDirection": "decrease",
+      "declaredMagnitude": 0.04,
+      "forecasted": 0.06528,
+      "quality": "mild negative",
+      "flag": "Warning"
+    },
+    {
+      "metric": "drift_1h",
+      "current": -0.042,
+      "declaredDirection": "neutral",
+      "declaredMagnitude": 0.0,
+      "forecasted": -0.042,
+      "quality": "neutral",
+      "flag": "OK"
+    }
+  ],
+  "criticalFlags": [],
+  "warnings": [
+    "elevated_volatility_risk",
+    "marginal_beta_exposure",
+    "declining_SE_trend",
+    "low_impact_confidence",
+    "audit_pending_metadata"
+  ],
+  "recommendation": "REVIEW REQUIRED",
+  "summary": "Narrowly meets threshold but warnings indicate non-trivial risks. Positive phi gains offset some negatives, but volatility increase and centralization concerns need addressing.",
+  "suggestedNextSteps": [
+    "Complete pending audit and update metadata",
+    "Mitigate volatility via phased rollout",
+    "Improve SE impact to neutral or positive",
+    "Rerun post-audit with refined impacts",
+    "Gather community feedback"
+  ],
+  "metadata": {
+    "version": "1.0"
+  }
+}
