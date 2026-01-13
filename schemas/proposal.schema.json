@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ISA-Compatible Governance Proposal Schema",
+  "type": "object",
+  "required": ["id", "title", "description", "impacts", "threshold"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique proposal identifier (e.g., PROP-2026-042)",
+      "pattern": "^(PROP|UPG|GOV)-[0-9]{4}-[0-9]{3}$"
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable title of the proposal",
+      "minLength": 8,
+      "maxLength": 120
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed explanation of the proposed change, rationale, and risks",
+      "minLength": 40
+    },
+    "impacts": {
+      "type": "array",
+      "description": "Expected metric changes and their confidence levels",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["metric", "direction", "magnitude"],
+        "properties": {
+          "metric": {
+            "type": "string",
+            "enum": [
+              "beta",
+              "vu",
+              "VU",
+              "iota",
+              "phi",
+              "psi5",
+              "SE",
+              "drift_1h",
+              "volatility_24h"
+            ]
+          },
+          "direction": {
+            "type": "string",
+            "enum": ["increase", "decrease", "neutral"]
+          },
+          "magnitude": {
+            "type": "number",
+            "description": "Expected relative change (0.0–1.0)",
+            "minimum": 0.0,
+            "maximum": 1.0
+          },
+          "confidence": {
+            "type": "number",
+            "description": "Evidence-based confidence (0.0–1.0)",
+            "minimum": 0.0,
+            "maximum": 1.0,
+            "default": 0.75
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "threshold": {
+      "type": "number",
+      "description": "Minimum governance score required for PASS",
+      "minimum": 0.5,
+      "maximum": 0.98
+    },
+    "domain": {
+      "type": "string",
+      "description": "Optional domain override",
+      "enum": ["DEX", "LENDING", "PERP", "BRIDGE", "YIELD", "NFT", "DAO"]
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Arbitrary additional metadata",
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "Schema version for backwards compatibility",
+          "default": "1.0"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}
