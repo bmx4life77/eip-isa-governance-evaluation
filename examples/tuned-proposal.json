@@ -1,0 +1,53 @@
+{
+  "id": "PROP-2026-112-rev1",
+  "title": "Leverage Cap Adjustment v3.2 – Tuned with Mitigations",
+  "description": "Increase max leverage from 20x to 25x for select low-vol assets (BTC, ETH perpetuals only). Includes phased rollout over 7 days, dynamic volatility caps (auto-reduce leverage if vol_24h > 0.25), and decentralization incentives (fee rebates for non-whale traders). Rationale: Boost capital efficiency (phi) while managing risks through safeguards. Backtested on 6 months historical data showing net positive impacts.",
+  "impacts": [
+    {
+      "metric": "phi",
+      "direction": "increase",
+      "magnitude": 0.12,
+      "confidence": 0.88
+    },
+    {
+      "metric": "volatility_24h",
+      "direction": "decrease",
+      "magnitude": 0.07,
+      "confidence": 0.85
+    },
+    {
+      "metric": "beta_modulated",
+      "direction": "decrease",
+      "magnitude": 0.05,
+      "confidence": 0.90
+    },
+    {
+      "metric": "SE",
+      "direction": "increase",
+      "magnitude": 0.06,
+      "confidence": 0.82
+    },
+    {
+      "metric": "drift_1h",
+      "direction": "neutral",
+      "magnitude": 0.0,
+      "confidence": 0.95
+    },
+    {
+      "metric": "psi5",
+      "direction": "decrease",
+      "magnitude": 0.08,
+      "confidence": 0.87
+    }
+  ],
+  "threshold": 0.72,
+  "domain": "PERP",
+  "metadata": {
+    "author": "risk-team",
+    "version": "3.2-rev1",
+    "audit_link": "https://audits.example.com/2026/leverage-v3.2",
+    "sim_results": "Backtest score: 0.89 (6mo data)",
+    "forum_url": "https://gov.example.com/t/prop-112-leverage-adjust-v3.2",
+    "risk_level": "low-medium"
+  }
+}
