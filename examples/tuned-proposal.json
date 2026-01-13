@@ -1,5 +1,5 @@
 {
-  "id": "PROP-2026-112-rev1",
+  "id": "PROP-2026-112",
   "title": "Leverage Cap Adjustment v3.2 – Tuned with Mitigations",
   "description": "Increase max leverage from 20x to 25x for select low-vol assets (BTC, ETH perpetuals only). Includes phased rollout over 7 days, dynamic volatility caps (auto-reduce leverage if vol_24h > 0.25), and decentralization incentives (fee rebates for non-whale traders). Rationale: Boost capital efficiency (phi) while managing risks through safeguards. Backtested on 6 months historical data showing net positive impacts.",
   "impacts": [
