@@ -1,0 +1,80 @@
+{
+  "runId": "gov-eval_20260112_184522_x9f2d1",
+  "timestamp": "2026-01-12T18:45:22.317Z",
+  "domain": "DEX",
+  "proposal": {
+    "id": "PROP-2026-089",
+    "title": "Risky Gas Upgrade v5 – 25% reduction",
+    "threshold": 0.78
+  },
+  "status": "FAIL",
+  "governanceScore": 0.612,
+  "currentModulatedMetrics": {
+    "beta_modulated": 2.62,
+    "volatility_24h": 0.38,
+    "SE": 0.032,
+    "drift_1h": 0.092,
+    "phi": 0.61,
+    "psi5": 0.48
+  },
+  "impactAnalysis": [
+    {
+      "metric": "beta_modulated",
+      "current": 2.62,
+      "declaredDirection": "neutral",
+      "declaredMagnitude": 0.0,
+      "forecasted": 2.62,
+      "quality": "none",
+      "flag": "CRITICAL"
+    },
+    {
+      "metric": "volatility_24h",
+      "current": 0.38,
+      "declaredDirection": "decrease",
+      "declaredMagnitude": 0.15,
+      "forecasted": 0.323,
+      "quality": "partial",
+      "flag": "CRITICAL"
+    },
+    {
+      "metric": "SE",
+      "current": 0.032,
+      "declaredDirection": "neutral",
+      "declaredMagnitude": 0.0,
+      "forecasted": 0.032,
+      "quality": "none",
+      "flag": "CRITICAL"
+    },
+    {
+      "metric": "drift_1h",
+      "current": 0.092,
+      "declaredDirection": "decrease",
+      "declaredMagnitude": 0.04,
+      "forecasted": 0.088,
+      "quality": "minimal",
+      "flag": "CRITICAL"
+    }
+  ],
+  "criticalFlags": [
+    "high_beta_exposure",
+    "extreme_volatility",
+    "whale_concentration_alert",
+    "momentum_spike"
+  ],
+  "warnings": [
+    "low_phi_efficiency",
+    "low_impact_confidence",
+    "macro_state_mismatch"
+  ],
+  "recommendation": "REJECT / MAJOR REVISION REQUIRED",
+  "summary": "Current baseline already in danger zone. Declared impacts too weak to offset systemic risks.",
+  "suggestedNextSteps": [
+    "Wait for calmer macro conditions",
+    "Strengthen proposal impacts",
+    "Add circuit breakers or rollback mechanisms",
+    "Rerun evaluation after baseline metrics improve"
+  ],
+  "metadata": {
+    "version": "1.0"
+  }
+}
