@@ -1,0 +1,81 @@
+{
+  "runId": "gov-eval_20260115_142209_k7p3m8",
+  "timestamp": "2026-01-15T14:22:09.841Z",
+  "domain": "DEX",
+  "proposal": {
+    "id": "PROP-2026-089-rev1",
+    "title": "Gas Optimization & Safety Upgrade v5.1",
+    "threshold": 0.76
+  },
+  "status": "PASS",
+  "governanceScore": 0.847,
+  "currentModulatedMetrics": {
+    "beta_modulated": 1.84,
+    "volatility_24h": 0.192,
+    "SE": 0.112,
+    "drift_1h": 0.018,
+    "phi": 0.89,
+    "psi5": 0.29
+  },
+  "impactAnalysis": [
+    {
+      "metric": "beta_modulated",
+      "current": 1.84,
+      "declaredDirection": "decrease",
+      "declaredMagnitude": 0.08,
+      "forecasted": 1.6928,
+      "quality": "strong",
+      "flag": "OK"
+    },
+    {
+      "metric": "volatility_24h",
+      "current": 0.192,
+      "declaredDirection": "decrease",
+      "declaredMagnitude": 0.34,
+      "forecasted": 0.12672,
+      "quality": "very strong",
+      "flag": "OK"
+    },
+    {
+      "metric": "SE",
+      "current": 0.112,
+      "declaredDirection": "increase",
+      "declaredMagnitude": 0.12,
+      "forecasted": 0.12544,
+      "quality": "good",
+      "flag": "OK"
+    },
+    {
+      "metric": "drift_1h",
+      "current": 0.018,
+      "declaredDirection": "neutral",
+      "declaredMagnitude": 0.0,
+      "forecasted": 0.018,
+      "quality": "neutral",
+      "flag": "OK"
+    },
+    {
+      "metric": "phi",
+      "current": 0.89,
+      "declaredDirection": "increase",
+      "declaredMagnitude": 0.06,
+      "forecasted": 0.9434,
+      "quality": "positive",
+      "flag": "OK"
+    }
+  ],
+  "criticalFlags": [],
+  "warnings": [
+    "minor_activity_transition"
+  ],
+  "recommendation": "DEPLOY RECOMMENDED",
+  "summary": "Proposal passes with good margin. Improved baseline conditions combined with strong, well-justified impacts result in meaningful risk reduction across major dimensions.",
+  "suggestedNextSteps": [
+    "Proceed to on-chain submission",
+    "Include referenced audits and safety mechanisms in governance description",
+    "Monitor post-deployment metrics for validation of forecasted improvements"
+  ],
+  "metadata": {
+    "version": "1.0"
+  }
+}
