@@ -1,0 +1,40 @@
+name: Validate JSON Schemas
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install JSON schema validator
+        run: npm install -g ajv-cli
+
+      - name: Validate proposal examples
+        run: |
+          ajv validate \
+            -s schemas/proposal.schema.json \
+            -d "examples/*proposal*.json" \
+            --strict=false || exit 1
+
+      - name: Validate evaluation examples
+        run: |
+          ajv validate \
+            -s schemas/evaluation.schema.json \
+            -d "examples/*eval*.json" \
+            --strict=false || exit 1
+
+      - name: Print success message
+        run: echo "All JSON files validated successfully."
